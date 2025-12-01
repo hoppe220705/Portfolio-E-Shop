@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Directions Test</title>
+    <style>
+        #google-maps-link {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Transport Information</h2>
+    <form id="travel-form">
+        <div>
+            <label for="from">Travel From:</label>
+            <input type="text" id="from" placeholder="Enter departure city or airport" required>
+        </div>
+
+        <div>
+            <label for="to">Travel To:</label>
+            <input type="text" id="to" placeholder="Enter destination city or airport" required>
+        </div>
+
+        <div>
+            <label for="travel-type">Travel With:</label>
+            <select id="travel-type">
+                <option value="driving">Car</option>
+                <option value="transit">Public Transport</option>
+                <option value="walking">Walking</option>
+                <option value="bicycling">Bicycling</option>
+            </select>
+        </div>
+
+        <button type="submit">Get Directions</button>
+    </form>
+
+    <!-- Container for the Google Maps link (will be replaced by redirection) -->
+    <p id="google-maps-link"></p>
+
+    <!-- JavaScript -->
+    <script>
+        
+    </script>
+</body>
+</html>

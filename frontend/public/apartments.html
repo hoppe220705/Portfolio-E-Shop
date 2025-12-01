@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avetura</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <header>
+    
+     <a href="index.html">
+        <img src="assets/ogol.png" alt="Anventura Logo" id="logo">
+    </a>
+    <div class="search-container">
+        <input type="text" class="search-box" placeholder="Gebe dein Traumland ein...">
+    </div>
+    <div class="language-selector">
+        <button class="language-btn">EN</button>
+        <div class="language-dropdown">
+            <ul>
+                <li><a href="index.html" >EN</a></li>
+                <li><a href="indexde.html" >DE</a></li>
+                <li><a href="indextü.html" >TÜ</a></li>
+                <li><a href="indexru.html" >РУ</a></li>
+            </ul>
+        </div>
+    </div>
+
+   
+    
+</header>
+<nav>
+        <ul>
+            <li><a href="world-map.html" id="wortra">World Map</a></li>
+            <li><a href="all-inclusive.html" id="alltra">All-Inclusive</a></li>
+            <li><a href="apartments.html" id="apatra">Apartments</a></li>
+            <li><a href="transport.html" id="tratra">Transport</a></li>
+            <li><a href="about-us.html" id="abotra">About Us</a></li>
+        </ul>
+    </nav>
+<main class="apartments-page">
+    <!-- Hero Section -->
+    <section class="apartments-hero">
+        <div class="apartments-hero-overlay">
+            <h1>Luxury Apartments for Your Perfect Stay</h1>
+            <p>Find your dream home or vacation rental with ease and comfort.</p>
+        </div>
+    </section>
+
+    <!-- Apartment Highlights Section -->
+    <section class="apartment-highlights">
+        <h2>Featured Apartments</h2>
+        <div class="apartment-cards">
+            <div class="apartment-card">
+                <div class="apartment-image">
+                    <img src="assets/parisapartment.jpg" alt="Luxury Apartment in Paris">
+                </div>
+                <div class="apartment-details">
+                    <h3>Luxury Apartment in Paris</h3>
+                    <p>Located in the heart of Paris, this apartment offers breathtaking views and all modern amenities.</p>
+                    <span class="price">$250/night</span>
+                    <button class="cta-btn">Book Now</button>
+                </div>
+            </div>
+
+            <div class="apartment-card">
+                <div class="apartment-image">
+                    <img src="assets/miamiapartment.jpeg" alt="Beachfront Condo in Miami">
+                </div>
+                <div class="apartment-details">
+                    <h3>Beachfront Condo in Miami</h3>
+                    <p>Enjoy your stay in this spacious condo with ocean views and private access to the beach.</p>
+                    <span class="price">$350/night</span>
+                    <button class="cta-btn">Book Now</button>
+                </div>
+            </div>
+
+            <div class="apartment-card">
+                <div class="apartment-image">
+                    <img src="assets/newyorkapartment.jpeg" alt="Modern Apartment in New York">
+                </div>
+                <div class="apartment-details">
+                    <h3>Modern Apartment in New York</h3>
+                    <p>Stay in this stylish apartment near Central Park, perfect for those who want to experience the best of New York.</p>
+                    <span class="price">$400/night</span>
+                    <button class="cta-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="apartment-search">
+        <h2>Find Your Perfect Apartment</h2>
+        <form class="search-form">
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="Enter city or area">
+
+            <label for="price-range">Price Range:</label>
+            <input type="range" id="price-range" min="100" max="5000" step="50">
+
+            <label for="bedrooms">Bedrooms:</label>
+            <select id="bedrooms">
+                <option value="1">1 Bedroom</option>
+                <option value="2">2 Bedrooms</option>
+                <option value="3">3 Bedrooms</option>
+                <option value="4">4+ Bedrooms</option>
+            </select>
+
+            <button type="submit" class="cta-btn">Search Apartments</button>
+        </form>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="apartment-reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review-cards">
+            <div class="review-card">
+                <p>"The best apartment I've ever stayed in! Amazing view, great location, and very comfortable."</p>
+                <p>- Nico H., Ludwigsburg</p>
+            </div>
+            <div class="review-card">
+                <p>"Incredible service and a beautiful apartment. It made our trip to New York unforgettable!"</p>
+                <p>- Altay Ö., Horb a.N.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+   <script src="js/script.js"></script> 
+<footer>
+        <nav style="padding-top: 10px;">
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="legalinfo.html">Legal Info</a></li>
+            </ul>
+        </nav>
+</footer>
+</body>
+
+</html>

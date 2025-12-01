@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avetura</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+    <script src="js/script.js"></script> 
+    
+
+</head>
+<body>
+    <header>
+    
+     <a href="index.html">
+        <img src="assets/ogol.png" alt="Anventura Logo" id="logo">
+    </a>
+    <div class="search-container">
+        <input type="text" class="search-box" placeholder="Gebe dein Traumland ein...">
+    </div>
+    <div class="language-selector">
+        <button class="language-btn">EN</button>
+        <div class="language-dropdown">
+            <ul>
+                <li><a href="index.html" >EN</a></li>
+                <li><a href="indexde.html" >DE</a></li>
+                <li><a href="indextü.html" >TÜ</a></li>
+                <li><a href="indexru.html" >РУ</a></li>
+            </ul>
+        </div>
+    </div>
+
+   
+    
+</header>
+<nav>
+        <ul>
+            <li><a href="world-map.html" id="wortra">World Map</a></li>
+            <li><a href="all-inclusive.html" id="alltra">All-Inclusive</a></li>
+            <li><a href="apartments.html" id="apatra">Apartments</a></li>
+            <li><a href="transport.html" id="tratra">Transport</a></li>
+            <li><a href="about-us.html" id="abotra">About Us</a></li>
+        </ul>
+    </nav>
+<main class="transport-page">
+    <!-- Hero Section -->
+    <section class="transport-hero">
+        <div class="transport-hero-overlay">
+            <h1 style="margin-right: 10px;">Plan Your Journey</h1>
+            <p>Find the best transport options for your next trip. Whether by car, bus, train, or flight, we've got you covered.</p>
+        </div>
+    </section>
+
+    <!-- Transport Options Search Section -->
+    <section class="transport-search">
+    <h2>Find Your Transport</h2>
+    <section class="transport-search">
+    <h2>Find Your Transport</h2>
+    <form id="travel-form">
+        <div class="form-group">
+            <label for="from">Travel From:</label>
+            <input type="text" id="from" placeholder="Enter departure city or place" style="width: 500px;">
+        </div>
+
+        <div class="form-group">
+            <label for="to">Travel To:</label>
+            <input type="text" id="to" placeholder="Enter destination city or place" style="width: 500px;">
+        </div>
+
+        <div class="form-group">
+            <label for="travel-type">Travel With:</label>
+            <select id="travel-type">
+                <option value="driving">Car</option>
+                <option value="transit">Public Transport</option>
+                <option value="walking">Walking</option>
+                <option value="bicycling">Bicycling</option>
+            </select>
+        </div>
+
+        <button type="submit" class="cta-btn" style="width: 500px;">Get Directions</button>
+    </form>
+    <p id="google-maps-link"></p>
+</section>
+
+   
+    <script>
+
+document.getElementById('travel-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent page reload
+
+            // Get values from the form
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const travelType = document.getElementById('travel-type').value;
+
+            // Check if both fields are filled
+            if (from && to) {
+                // Create the Google Maps URL
+                const googleMapsURL = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(from)}&destination=${encodeURIComponent(to)}&travelmode=${travelType}`;
+
+                // Redirect directly to Google Maps with the parameters
+                window.location.href = googleMapsURL;
+            } else {
+                alert("Please fill in both the departure and destination locations.");
+            }
+        });
+    </script>
+</section>
+
+
+    
+
+    <!-- Flight Search Section -->
+    <section class="flight-search">
+    <h2>Find Flights</h2>
+    <form id="flightForm" >
+  <div class="form-group" style="margin-left: 600px; margin-right: 600px;"><label>Abflughafen (IATA): <input type="text" id="from-fly" required></label><br></div>
+  <div class="form-group" style="margin-left: 600px; margin-right: 600px;"><label>Ankunftsflughafen (IATA): <input type="text" id="to-fly" required></label><br></div>
+  <div class="form-group" style="margin-left: 625px; margin-right: 625px;"><label>Datum: <input type="date" id="date" required></label><br></div>
+  <button type="submit">Flüge suchen</button>
+</form>
+
+    
+</section>
+
+<script>
+document.getElementById('flightForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const from = document.getElementById('from-fly').value.trim().toLowerCase();
+  const to = document.getElementById('to-fly').value.trim().toLowerCase();
+  const rawDate = document.getElementById('date').value;
+
+  // Falls irgendwas fehlt → Abbrechen
+  if (!from || !to || !rawDate) {
+    alert("Bitte alle Felder korrekt ausfüllen!");
+    return;
+  }
+
+  // Datum von YYYY-MM-DD nach YYMMDD
+  const dateObj = new Date(rawDate);
+  const yy = String(dateObj.getFullYear()).slice(-2);
+  const mm = String(dateObj.getMonth() + 1).padStart(2, '0');
+  const dd = String(dateObj.getDate()).padStart(2, '0');
+  const formatted = `${yy}${mm}${dd}`;
+
+  const url = `https://www.skyscanner.de/transport/fluge/${from}/${to}/${formatted}/`;
+
+  console.log("Generierter Link:", url);
+  window.location.href = url;
+});
+
+
+</script>
+</main>
+
+
+
+   
+<footer>
+        <nav style="padding-top: 10px;">
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="legalinfo.html">Legal Info</a></li>
+            </ul>
+        </nav>
+</footer>
+</body>
+
+</html>
